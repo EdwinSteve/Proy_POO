@@ -86,8 +86,4 @@ package Registro;
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-
-    public String getDireccion() {
-        
-    }
 }
