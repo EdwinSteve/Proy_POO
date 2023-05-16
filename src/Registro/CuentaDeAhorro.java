@@ -1,13 +1,8 @@
-
 package Registro;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-/**
- *
- * @author Saul Quimbaya
- */
 public class CuentaDeAhorro {
     private String nombre;
     private String apellido;
@@ -24,7 +19,6 @@ public class CuentaDeAhorro {
         this.fechaApertura = fechaApertura;
         this.reporteAhorro = reporteAhorro;
         this.totalPlata = totalPlata;
-       
     }
 
     public String getNombre() {

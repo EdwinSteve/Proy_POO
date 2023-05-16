@@ -1,10 +1,5 @@
-
 package Registro;
 
-/**
- *
- * @author Saul Quimbaya
- */
 public class Cajero {
     private String numeroCedula;
     private double monto;

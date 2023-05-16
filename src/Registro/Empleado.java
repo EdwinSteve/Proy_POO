@@ -1,10 +1,5 @@
-
 package Registro;
 
-/**
- *
- * @author Saul Quimbaya
- */
 public class Empleado {
     private String nombre;
     private String apellido;

@@ -1,10 +1,4 @@
-
 package Registro;
-
-/**
- *
- * @author Saul Quimbaya
- */
 
     public class Cliente {
     private String nombre;

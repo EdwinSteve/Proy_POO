@@ -1,4 +1,3 @@
-
 package Registro;
 
 import Registro.Registro1;
