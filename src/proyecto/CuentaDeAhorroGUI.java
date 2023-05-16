@@ -134,6 +134,8 @@ public class CuentaDeAhorroGUI extends JFrame {
             }
         });
 
+        jLabel7.setBackground(new java.awt.Color(255, 204, 255));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 153));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("REGISTRO  DE DATOS CUENTA DE AHORRO ");
 
