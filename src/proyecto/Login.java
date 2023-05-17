@@ -4,6 +4,9 @@
  */
 package proyecto;
 
+import Registro.*;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Saul Quimbaya
@@ -33,7 +36,7 @@ public class Login extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        textUsu = new javax.swing.JTextField();
+        txtuser = new javax.swing.JTextField();
         txtpass = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -82,7 +85,7 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(131, 131, 131)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(textUsu, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                            .addComponent(txtuser, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
                             .addComponent(txtpass, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
                             .addComponent(jButton2)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -97,7 +100,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtuser, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -130,11 +133,45 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        Registro reg = new Registro();
+        reg.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        
+        Consultas modSql = new Consultas();
+        Registro1 mod = new Registro1();
+        Cta_ahorro cuenta = new Cta_ahorro();
+
+        String pass = new String(txtpass.getPassword());
+
+        if (!txtuser.getText().equals("") && !pass.equals(""))
+        {
+
+            String nuevoPass = hash.sha1(pass);
+
+            mod.setUsuario(txtuser.getText());
+            mod.setContraseña(nuevoPass);
+
+            if (modSql.login(mod))
+            {
+                
+                this.dispose();
+               
+                cuenta.setVisible(true);
+
+            } else
+            {
+                JOptionPane.showMessageDialog(null, "Los datos son incorrectos\nPorfavor ingresalos nuevamente");
+
+            }
+        } else
+        {
+            JOptionPane.showMessageDialog(null, "No pueden haber datos vacios");
+
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -179,7 +216,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField textUsu;
     private javax.swing.JPasswordField txtpass;
+    private javax.swing.JTextField txtuser;
     // End of variables declaration//GEN-END:variables
 }

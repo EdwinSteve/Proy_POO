@@ -7,12 +7,21 @@ package Registro;
  */
 public class Registro1  {
     
+    private int id;
     private String nombre;
     private String apellido;
     private String usuario;
     private String contraseña;
 
     public Registro1() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {

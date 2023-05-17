@@ -1,7 +1,6 @@
 
 package Registro;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -17,13 +16,7 @@ public class CuentaDeAhorro {
     private double totalPlata;
    
 
-    public CuentaDeAhorro(String nombre, String apellido, String cedula, Date fechaApertura, double reporteAhorro, double totalPlata) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.cedula = cedula;
-        this.fechaApertura = fechaApertura;
-        this.reporteAhorro = reporteAhorro;
-        this.totalPlata = totalPlata;
+    public CuentaDeAhorro() {
        
     }
 
@@ -74,4 +67,11 @@ public class CuentaDeAhorro {
     public void setTotalPlata(double totalPlata) {
         this.totalPlata = totalPlata;
     }
+
+    @Override
+    public String toString() {
+        return "CuentaDeAhorro{" + "nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula + ", fechaApertura=" + fechaApertura + ", reporteAhorro=" + reporteAhorro + ", totalPlata=" + totalPlata + '}';
+    }
+    
+    
 }
